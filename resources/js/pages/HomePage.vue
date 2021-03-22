@@ -27,7 +27,7 @@
           v-for="professional in professionals"
           :key="professional.profissional_id"
         >
-        
+
           <div class="card mt-4">
             <img
               v-if="professional.sexo == 'Feminino'"
@@ -181,7 +181,7 @@ export default {
   methods: {
     getAllSpacialties: function () {
       window.axios
-        .get(`api/scheduling/specialties`) //${process.env.MIX_URL_SERVICE}
+        .get(`${process.env.MIX_URL_SERVICE}/api/scheduling/specialties`) //${process.env.MIX_URL_SERVICE}
         .then((res) => {
           this.specialties = res.data.content;
         })
