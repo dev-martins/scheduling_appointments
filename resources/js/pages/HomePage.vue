@@ -27,6 +27,7 @@
           v-for="professional in professionals"
           :key="professional.profissional_id"
         >
+        
           <div class="card mt-4">
             <img
               v-if="professional.sexo == 'Feminino'"
