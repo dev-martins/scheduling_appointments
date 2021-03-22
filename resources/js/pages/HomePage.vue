@@ -181,7 +181,7 @@ export default {
   methods: {
     getAllSpacialties: function () {
       window.axios
-        .get(`${process.env.MIX_URL_SERVICE}/api/scheduling/specialties`) //${process.env.MIX_URL_SERVICE}
+        .get(`/api/scheduling/specialties`) //${process.env.MIX_URL_SERVICE}
         .then((res) => {
           this.specialties = res.data.content;
         })
@@ -196,7 +196,7 @@ export default {
     getProfessional: function (id_especialty) {
       window.axios
         .get(
-          `${process.env.MIX_URL_SERVICE}/api/scheduling/professionals/${this.specialtie_selected}`
+          `/api/scheduling/professionals/${this.specialtie_selected}`
         )
         .then((res) => {
           this.professionals = res.data.content;
@@ -212,7 +212,7 @@ export default {
     },
     getChannels: function () {
       window.axios
-        .get(`${process.env.MIX_URL_SERVICE}/api/scheduling/channels/list-sources`)
+        .get(`/api/scheduling/channels/list-sources`)
         .then((res) => {
           this.channels = res.data.content;
           console.log(this.professionals);
@@ -239,7 +239,7 @@ export default {
       this.sendData.append("source_id", channel_selected);
 
       window.axios
-        .post(`${process.env.MIX_URL_SERVICE}/api/scheduling`, this.sendData)
+        .post(`/api/scheduling`, this.sendData)
         .then((res) => {
           Vue.$toast.open({
             message: "Consulta Agendada!",
