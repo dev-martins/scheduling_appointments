@@ -8,6 +8,14 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+import 'vue-toast-notification/dist/theme-default.css';
+import { Datetime } from 'vue-datetime';
+import 'vue-datetime/dist/vue-datetime.css';
+import VueTheMask from 'vue-the-mask'
+
+Vue.component('datetime', Datetime);
+Vue.use(VueTheMask)
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,7 +27,7 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('home-page', require('./pages/HomePage.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

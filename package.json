@@ -27,6 +27,7 @@
     "dependencies": {
         "luxon": "^1.26.0",
         "vue-datetime": "^1.0.0-beta.14",
+        "vue-the-mask": "^0.11.1",
         "vue-toast-notification": "^0.6.1",
         "weekstart": "^1.1.0"
     }
