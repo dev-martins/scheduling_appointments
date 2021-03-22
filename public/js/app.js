@@ -2030,7 +2030,7 @@ Vue.use((vue_toast_notification__WEBPACK_IMPORTED_MODULE_1___default()));
     getAllSpacialties: function getAllSpacialties() {
       var _this = this;
 
-      window.axios.get("api/scheduling/specialties") //${process.env.MIX_URL_SERVICE}
+      window.axios.get("".concat("http://scheduling-ppointments.herokuapp.com", "/api/scheduling/specialties")) //${process.env.MIX_URL_SERVICE}
       .then(function (res) {
         _this.specialties = res.data.content;
       })["catch"](function (erro) {
@@ -2044,7 +2044,7 @@ Vue.use((vue_toast_notification__WEBPACK_IMPORTED_MODULE_1___default()));
     getProfessional: function getProfessional(id_especialty) {
       var _this2 = this;
 
-      window.axios.get("".concat("http://127.0.0.1:8000", "/api/scheduling/professionals/").concat(this.specialtie_selected)).then(function (res) {
+      window.axios.get("".concat("http://scheduling-ppointments.herokuapp.com", "/api/scheduling/professionals/").concat(this.specialtie_selected)).then(function (res) {
         _this2.professionals = res.data.content;
         console.log(_this2.professionals);
       })["catch"](function (erro) {
@@ -2058,7 +2058,7 @@ Vue.use((vue_toast_notification__WEBPACK_IMPORTED_MODULE_1___default()));
     getChannels: function getChannels() {
       var _this3 = this;
 
-      window.axios.get("".concat("http://127.0.0.1:8000", "/api/scheduling/channels/list-sources")).then(function (res) {
+      window.axios.get("".concat("http://scheduling-ppointments.herokuapp.com", "/api/scheduling/channels/list-sources")).then(function (res) {
         _this3.channels = res.data.content;
         console.log(_this3.professionals);
       })["catch"](function (erro) {
@@ -2084,7 +2084,7 @@ Vue.use((vue_toast_notification__WEBPACK_IMPORTED_MODULE_1___default()));
       this.sendData.append("specialty_id", specialty_id);
       this.sendData.append("professional_id", professional_id);
       this.sendData.append("source_id", channel_selected);
-      window.axios.post("".concat("http://127.0.0.1:8000", "/api/scheduling"), this.sendData).then(function (res) {
+      window.axios.post("".concat("http://scheduling-ppointments.herokuapp.com", "/api/scheduling"), this.sendData).then(function (res) {
         Vue.$toast.open({
           message: "Consulta Agendada!",
           type: "success",
@@ -60513,7 +60513,7 @@ var regionDayMap = {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_from":"weekstart@^1.1.0","_id":"weekstart@1.1.0","_inBundle":false,"_integrity":"sha512-ZO3I7c7J9nwGN1PZKZeBYAsuwWEsCOZi5T68cQoVNYrzrpp5Br0Bgi0OF4l8kH/Ez7nKfxa5mSsXjsgris3+qg==","_location":"/weekstart","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"weekstart@^1.1.0","name":"weekstart","escapedName":"weekstart","rawSpec":"^1.1.0","saveSpec":null,"fetchSpec":"^1.1.0"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/weekstart/-/weekstart-1.1.0.tgz","_shasum":"af642eb10dc24b1af9d4dcc0415056edc087b897","_spec":"weekstart@^1.1.0","_where":"C:\\\\Users\\\\Corebiz\\\\Documents\\\\desafios\\\\scheduling_appointments","author":{"name":"Denis Sikuler"},"bugs":{"url":"https://github.com/gamtiq/weekstart/issues"},"bundleDependencies":false,"deprecated":false,"description":"Library to get first day of week.","devDependencies":{"@babel/preset-env":"^7.13.10","eslint":"^7.22.0","eslint-config-guard":"^2.0.1","ink-docstrap":"1.3.2","jest":"^26.6.3","jsdoc":"^3.6.6","jsdoc-file":"^1.0.1","microbundle":"0.4.4","version-bump-prompt":"^6.1.0"},"files":["dist","full.js","full.d.ts","index.d.ts","src","History.md"],"homepage":"https://github.com/gamtiq/weekstart","keywords":["week","start","first","day","locale","country","region"],"license":"MIT","main":"dist/commonjs/main.js","module":"dist/es-module/main.js","name":"weekstart","repository":{"type":"git","url":"git://github.com/gamtiq/weekstart.git"},"scripts":{"all":"npm run check-all && npm run doc && npm run build","build":"npm run build-umd && npm run build-commonjs && npm run build-esm && npm run build-umd-min","build-commonjs":"microbundle build \\"src/!(*.test).js\\" --output dist/commonjs --format cjs --strict --no-compress","build-esm":"microbundle build \\"src/!(*.test).js\\" --output dist/es-module --format es --no-compress","build-umd":"microbundle build src/main.js src/full.js --output dist --format umd --strict --no-compress","build-umd-min":"microbundle build src/main.js src/full.js --output dist/min --format umd --strict","check":"npm run lint && npm test","check-all":"npm run lint-all && npm test","doc":"jsdoc -c jsdoc-conf.js","lint":"eslint --cache --max-warnings 0 \\"**/*.js\\"","lint-all":"eslint --max-warnings 0 \\"**/*.js\\"","lint-all-error":"eslint \\"**/*.js\\"","lint-error":"eslint --cache \\"**/*.js\\"","release":"bump patch --commit --tag --all --push package.json package-lock.json bower.json component.json","release-major":"bump major --commit --tag --all --push package.json package-lock.json bower.json component.json","release-minor":"bump minor --commit --tag --all --push package.json package-lock.json bower.json component.json","test":"jest"},"types":"./index.d.ts","umd:main":"dist/main.js","version":"1.1.0"}');
+module.exports = JSON.parse('{"_from":"weekstart@^1.1.0","_id":"weekstart@1.1.0","_inBundle":false,"_integrity":"sha512-ZO3I7c7J9nwGN1PZKZeBYAsuwWEsCOZi5T68cQoVNYrzrpp5Br0Bgi0OF4l8kH/Ez7nKfxa5mSsXjsgris3+qg==","_location":"/weekstart","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"weekstart@^1.1.0","name":"weekstart","escapedName":"weekstart","rawSpec":"^1.1.0","saveSpec":null,"fetchSpec":"^1.1.0"},"_requiredBy":["#USER","/"],"_resolved":"https://registry.npmjs.org/weekstart/-/weekstart-1.1.0.tgz","_shasum":"af642eb10dc24b1af9d4dcc0415056edc087b897","_spec":"weekstart@^1.1.0","_where":"C:\\\\Users\\\\Corebiz\\\\Documents\\\\desafios\\\\scheduling_appointments","author":{"name":"Denis Sikuler"},"bugs":{"url":"https://github.com/gamtiq/weekstart/issues"},"bundleDependencies":false,"deprecated":false,"description":"Library to get first day of week.","devDependencies":{"@babel/preset-env":"^7.13.10","eslint":"^7.22.0","eslint-config-guard":"^2.0.1","ink-docstrap":"1.3.2","jest":"^26.6.3","jsdoc":"^3.6.6","jsdoc-file":"^1.0.1","microbundle":"0.4.4","version-bump-prompt":"^6.1.0"},"files":["dist","full.js","full.d.ts","index.d.ts","src","History.md"],"homepage":"https://github.com/gamtiq/weekstart","keywords":["week","start","first","day","locale","country","region"],"license":"MIT","main":"dist/commonjs/main.js","module":"dist/es-module/main.js","name":"weekstart","repository":{"type":"git","url":"git://github.com/gamtiq/weekstart.git"},"scripts":{"all":"npm run check-all && npm run doc && npm run build","build":"npm run build-umd && npm run build-commonjs && npm run build-esm && npm run build-umd-min","build-commonjs":"microbundle build \\"src/!(*.test).js\\" --output dist/commonjs --format cjs --strict --no-compress","build-esm":"microbundle build \\"src/!(*.test).js\\" --output dist/es-module --format es --no-compress","build-umd":"microbundle build src/main.js src/full.js --output dist --format umd --strict --no-compress","build-umd-min":"microbundle build src/main.js src/full.js --output dist/min --format umd --strict","check":"npm run lint && npm test","check-all":"npm run lint-all && npm test","doc":"jsdoc -c jsdoc-conf.js","lint":"eslint --cache --max-warnings 0 \\"**/*.js\\"","lint-all":"eslint --max-warnings 0 \\"**/*.js\\"","lint-all-error":"eslint \\"**/*.js\\"","lint-error":"eslint --cache \\"**/*.js\\"","release":"bump patch --commit --tag --all --push package.json package-lock.json bower.json component.json","release-major":"bump major --commit --tag --all --push package.json package-lock.json bower.json component.json","release-minor":"bump minor --commit --tag --all --push package.json package-lock.json bower.json component.json","test":"jest"},"types":"./index.d.ts","umd:main":"dist/main.js","version":"1.1.0"}');
 
 /***/ })
 
